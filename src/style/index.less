@@ -1,0 +1,66 @@
+@bg-color:#bfa;
+*{
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font:bold 20px "Courier";
+}
+#main{
+  width: 360px;
+  height: 420px;
+  background-color:@bg-color;
+  margin:100px auto;
+  border: 10px #000000 solid;
+  border-radius: 40px;
+  display: flex;
+  //设置主轴方向
+  flex-flow: column;
+  //设置侧轴的对齐方式
+  align-items: center;
+  //设置主轴的对齐方式
+  justify-content: space-around;
+  #stage{
+    width: 304px;
+    height: 304px;
+    border: 2px #000000 solid;
+    position: relative;
+    #snake{
+
+      &>div{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #000;
+        border:1px solid @bg-color;
+      }
+    }
+    #food{
+      width: 10px;
+      height: 10px;
+      position: absolute;
+
+
+      display: flex;
+      //设置横轴为主轴 warp表示自动换行
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-content: space-around;
+      &>div{
+        width: 4px;
+        height: 4px;
+        background-color: #000;
+        //transform:rotate(45deg) ;
+        border-radius: 50%;
+      }
+
+    }
+  }
+  #score-panel{
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+
+  }
+}
